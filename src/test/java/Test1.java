@@ -11,7 +11,7 @@ public class Test1 {
 
     @Test
     public void firstTest() {
-        System.out.println("first test");
+        //System.out.println("first test");
         Assert.assertFalse(false);
     }
 }
