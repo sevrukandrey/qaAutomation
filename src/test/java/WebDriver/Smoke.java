@@ -1,41 +1,62 @@
 package WebDriver;
 
 import WebDriver.utils.SetUp;
+import static org.assertj.core.api.Assertions.*;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.annotations.Test;
+
 
 /**
  * Created by asevruk on 22.03.2017.
  */
-public class SmokeTest1 extends SetUp {
+
+
+// Implicity wait --
+public class Smoke extends SetUp {
 
 
     @Test
-    public void corectPageLoadedTest(){
+    public void correctPageLoadedTest(){
         openSite();
+
+assertThat("asd").contains("asd").hasSize(3);
+
     }
 
     @Test
     public void searchFieldIsPresentTest(){
         openSite();
         findSearchButton();
+
     }
 
     @Test
     public void searchFunctionalityIsWorkingTest(){
         openSite();
         findSearchButton();
-        typeTextToSerch();
+        typeTextToSearch();
         findSearchingResult();
 
+        String txt = driver.findElement(By.xpath("//a[contains(text(),'гитара')]")).getText();
+
+
     }
+
+
+
 
     private void findSearchingResult() {
         driver.findElement(By.className("button-search")).click();
 
     }
 
-    private void typeTextToSerch() {
+    private void typeTextToSearch() {
         driver.findElement(By.name("search")).clear();
         driver.findElement(By.name("search")).sendKeys("гитара");
 
@@ -43,7 +64,11 @@ public class SmokeTest1 extends SetUp {
 
 
     private void findSearchButton() {
-        driver.findElement(By.name("search"));
+
+        WebDriverWait wait = new WebDriverWait(driver,17);
+       wait.until(ExpectedConditions.elementToBeClickable(By.name("search1")));
+
+        driver.findElement(By.name("search1"));
     }
 
     private  void openSite() {

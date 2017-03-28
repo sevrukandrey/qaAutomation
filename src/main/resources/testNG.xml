@@ -1,9 +1,9 @@
 <suite name="Test-class Suite" parallel="classes" thread-count="2" >
 
-    <test name="example.Test1">
+    <test name="test">
         <classes>
             <class name="WebDriver.SmokeTest" />
-            <class name="WebDriver.SmokeTest1" />
+            <class name="WebDriver.Smoke" />
         </classes>
     </test>
 

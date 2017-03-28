@@ -11,7 +11,7 @@ public class SmokeTest extends SetUp {
 
 
     @Test
-    public void corectPageLoadedTest(){
+    public void correctPageLoadedTest(){
         openSite();
     }
 
