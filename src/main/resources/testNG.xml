@@ -1,18 +1,11 @@
-<suite name="Suite1" verbose="1">
+<suite name="Test-class Suite" parallel="classes" thread-count="2" >
+
     <test name="example.Test1">
         <classes>
-            <class name="example.Test1">
-                <methods>
-                    <exclude name="firstTest">
-                    </exclude>
-                </methods>
-            </class>
+            <class name="WebDriver.SmokeTest" />
+            <class name="WebDriver.SmokeTest1" />
         </classes>
     </test>
 
-    <test name="example.Test2">
-        <classes>
-            <class name="example.Test2"/>
-        </classes>
-    </test>
+
 </suite>

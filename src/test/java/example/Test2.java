@@ -1,5 +1,7 @@
 package example;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -35,6 +37,8 @@ public class Test2 {
 
     @Test
     public void secondTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://dsd.net");
         System.out.println("second test2");
         Assert.assertFalse(false);
     }
