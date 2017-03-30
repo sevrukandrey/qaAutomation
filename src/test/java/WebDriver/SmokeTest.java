@@ -1,6 +1,6 @@
 package WebDriver;
 
-import WebDriver.utils.SetUp;
+import utils.SetUp;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 

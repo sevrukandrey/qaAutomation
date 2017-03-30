@@ -1,11 +1,10 @@
 package WebDriver;
 
-import WebDriver.utils.SetUp;
+import utils.SetUp;
+
 import static org.assertj.core.api.Assertions.*;
-import org.assertj.core.api.Assertions;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,22 +21,22 @@ public class Smoke extends SetUp {
 
 
     @Test
-    public void correctPageLoadedTest(){
+    public void correctPageLoadedTest() {
         openSite();
 
-assertThat("asd").contains("asd").hasSize(3);
+   assertThat("asd");
 
     }
 
     @Test
-    public void searchFieldIsPresentTest(){
+    public void searchFieldIsPresentTest() {
         openSite();
         findSearchButton();
 
     }
 
     @Test
-    public void searchFunctionalityIsWorkingTest(){
+    public void searchFunctionalityIsWorkingTest() {
         openSite();
         findSearchButton();
         typeTextToSearch();
@@ -47,8 +46,6 @@ assertThat("asd").contains("asd").hasSize(3);
 
 
     }
-
-
 
 
     private void findSearchingResult() {
@@ -65,13 +62,13 @@ assertThat("asd").contains("asd").hasSize(3);
 
     private void findSearchButton() {
 
-        WebDriverWait wait = new WebDriverWait(driver,17);
-       wait.until(ExpectedConditions.elementToBeClickable(By.name("search1")));
+        WebDriverWait wait = new WebDriverWait(driver, 17);
+        wait.until(ExpectedConditions.elementToBeClickable(By.name("search1")));
 
         driver.findElement(By.name("search1"));
     }
 
-    private  void openSite() {
+    private void openSite() {
         driver.get("http://allegro.com.ua");
         driver.getTitle().equals("Поиск - гитара");
     }
