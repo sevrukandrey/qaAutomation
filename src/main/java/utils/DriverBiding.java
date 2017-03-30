@@ -33,7 +33,9 @@ public class DriverBiding {
         return  driver.findElement(locator);
     }
 
-
+   public  void isElementPresent(локатор){
+       //находим елемент и возвращаем бул
+   }
 }
 
 
