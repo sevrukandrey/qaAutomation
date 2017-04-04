@@ -20,10 +20,10 @@ public class KabinetPage {
 
 
     public void assertUserLoggedIn(){
-        assertThat(drB.isPresent(exitBtn)).isTrue();
+        assertThat(drB.isElementPresent(exitBtn)).isTrue();
     }
 
     public void BtnExitIsPresent() {
-        drB.isPresent(exitBtn);
+        drB.isElementPresent(exitBtn);
     }
 }

@@ -23,13 +23,14 @@ public class SearchPage {
 
 
     public void searchGitara(){
+        drB.isElementPresent(searchField);
         drB.typeText(searchField,textToSearch);
 
 
     }
 
     public void seachFieldisPressent(){
-        Assert.assertTrue(drB.isPresent(searchField));
+        Assert.assertTrue(drB.isElementPresent(searchField));
 
     }
 

@@ -10,26 +10,27 @@ public class LoginTest extends SetUp {
 
 
     @Test
-    public void userCanLogin(){
+    public void userCanLogin() {
         loginPage.logIn();
         userKabinetPage.assertUserLoggedIn();
     }
 
     @Test
-    public void searchFuntionalityIsWorking(){
+    public void searchFuntionalityIsWorking() {
         searchPage.seachFieldisPressent();
         searchPage.searchGitara();
         searchPage.verifySearchingResult();
 
     }
+
     @Test
-    public void selectedFunctionalityTest(){
+    public void selectedFunctionalityTest() {
         loginPage.logIn();
         userKabinetPage.assertUserLoggedIn();
         searchPage.searchGitara();
-        bookmarksPage.addItemToBookmarks();
-        bookmarksPage.verifyItemAddedToBookmarks();
-        bookmarksPage.deleteItemsFromBookmarks();
+        bookmarksPage.addItemToBookmarks()
+                .verifyItemAddedToBookmarks()
+                .deleteItemsFromBookmarks();
     }
 
 }

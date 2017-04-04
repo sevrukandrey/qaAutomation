@@ -22,13 +22,15 @@ public class BookmarksPage {
 
 
 
-    public void addItemToBookmarks() {
+    public BookmarksPage addItemToBookmarks() {
             drB.getElement(itemToBookmark).click();
+        return this;
 
     }
-    public void verifyItemAddedToBookmarks(){
+    public BookmarksPage verifyItemAddedToBookmarks(){
         drB.openLink(allBookmarks);
         Assert.assertTrue(drB.getElement(itemInBookmarks).getText().contains("гитара"));
+        return this;
     }
 
     public void deleteItemsFromBookmarks(){
@@ -40,7 +42,7 @@ public class BookmarksPage {
 
             drB.openLink(allBookmarks);
 
-            while(drB.isPresent(deleteBtn)){
+            while(drB.isElementPresent(deleteBtn)){
                 drB.deleteItems(deleteBtn);
                 drB.updatepage();
 
