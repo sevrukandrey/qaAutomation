@@ -8,11 +8,28 @@ import utils.SetUp;
  */
 public class LoginTest extends SetUp {
 
-    @Test
-    public void loginTest(){
 
-       loginPage.logIn();
-        loginPage.assertThatCarIsfound();
+    @Test
+    public void userCanLogin(){
+        loginPage.logIn();
+        userKabinetPage.assertUserLoggedIn();
+    }
+
+    @Test
+    public void searchFuntionalityIsWorking(){
+        searchPage.seachFieldisPressent();
+        searchPage.searchGitara();
+        searchPage.verifySearchingResult();
+
+    }
+    @Test
+    public void selectedFunctionalityTest(){
+        loginPage.logIn();
+        userKabinetPage.assertUserLoggedIn();
+        searchPage.searchGitara();
+        bookmarksPage.addItemToBookmarks();
+        bookmarksPage.verifyItemAddedToBookmarks();
+        bookmarksPage.deleteItemsFromBookmarks();
     }
 
 }

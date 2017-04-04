@@ -1,8 +1,8 @@
 package utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+
+import java.util.List;
 
 /**
  * Created by User on 30.03.2017.
@@ -17,25 +17,44 @@ public class DriverBiding {
     WebDriver driver;
 
     public DriverBiding(WebDriver driver) {
-        getElement()
+        this.driver= driver;
 
     }
 
-    public void clickON(){
-        getElement()
-    }
 
-    public void clickON2(){
-
-    }
 
     public WebElement getElement(By locator){
         return  driver.findElement(locator);
     }
+    public List<WebElement> getElements(By locator){
+        return driver.findElements(locator);
+    }
 
-   public  void isElementPresent(локатор){
-       //находим елемент и возвращаем бул
-   }
+    public boolean isPresent(By locator){
+        try {
+            driver.findElement(locator).isEnabled();
+
+        }catch (NoSuchElementException e){
+            return false;
+        }
+            return true;
+    }
+
+    public void typeText(By locator,String text){
+         driver.findElement(locator).sendKeys(text + Keys.ENTER);
+    }
+
+
+    public void openLink(By locator) {
+         driver.findElement(locator).click();
+    }
+
+    public void deleteItems(By locator){
+        driver.findElement(locator).click();
+    }
+    public void updatepage(){
+        driver.get("http://www.allegro.com.ua/index.php?route=account/wishlist");
+    }
 }
 
 
