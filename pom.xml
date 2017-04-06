@@ -11,7 +11,7 @@
 
     <properties>
         <webdriver.chrome>src/main/resources/chromedriver.exe</webdriver.chrome>
-    </properties>
+        </properties>
 
     <build>
         <pluginManagement>

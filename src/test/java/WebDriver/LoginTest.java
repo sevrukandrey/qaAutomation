@@ -1,11 +1,14 @@
 package WebDriver;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utils.MyCustomlister;
 import utils.SetUp;
 
 /**
  * Created by User on 30.03.2017.
  */
+@Listeners({MyCustomlister.class})
 public class LoginTest extends SetUp {
 
 

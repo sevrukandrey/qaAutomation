@@ -9,6 +9,7 @@ import pages.KabinetPage;
 import pages.LoginPage;
 import pages.SearchPage;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -22,13 +23,12 @@ public class SetUp {
     public KabinetPage userKabinetPage;
     public BookmarksPage bookmarksPage;
 
+    DriverManager drM = new DriverManager();
+
 
     @BeforeTest
-    public   void setUp(){
-        driver = new ChromeDriver();
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-        driver.get("http://allegro.com.ua");
+    public   void setUp() throws IOException {
+        driver = drM.setupDriver();
 
         loginPage = new LoginPage(driver);
         userKabinetPage= new KabinetPage(driver);
